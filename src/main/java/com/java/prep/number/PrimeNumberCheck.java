@@ -4,7 +4,7 @@ public class PrimeNumberCheck {
 
 	public static void main(String[] args) {
 		System.out.println(isPrime(19)); // true
-		System.out.println(isPrime(49)); // false
+		System.out.println(isPrime(143)); // false
 	}
 
 	public static boolean isPrime(int n) {
@@ -14,7 +14,7 @@ public class PrimeNumberCheck {
 		if (n == 2) {
 			return true;
 		}
-		for (int i = 2; i <= n / 2; i++) {
+		for (int i = 2; i <= n - 1; i++) {
 			if (n % i == 0) {
 				return false;
 			}

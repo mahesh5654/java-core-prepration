@@ -2,22 +2,43 @@ package com.java.prep.number;
 
 public class PrintFibonacci {
 
+
+	public static void main(String[] args) {
+    	printFibonacciSequence(10);
+    	
+    	
+    	System.out.println();
+    	
+    	int seqLength = 10;
+
+    	System.out.print("A Fibonacci sequence of " + seqLength + " numbers: ");
+
+    	System.out.println();
+    	// printFibonacciSequence
+    	for (int i = 0; i < seqLength; i++) {
+      	    System.out.print(recursiveFibonacci(i) + " ");
+    	}
+	}
+	// F(N) = F(N-1) + F(N-2)
 	public static void printFibonacciSequence(int count) {
 		int a = 0;
 		int b = 1;
 		int c = 1;
 
 		for (int i = 1; i <= count; i++) {
-			System.out.print(a + ", ");
+			System.out.print(a + " ");
 
             a = b;
 			b = c;
 			c = a + b;
 		}
 	}
-// F(N) = F(N-1) + F(N-2)
-	public static void main(String[] args) {
-    	printFibonacciSequence(10);
-	}
+	
+	 public static int recursiveFibonacci(int count) {
+			if (count <= 1)
+				return count;
+
+			return recursiveFibonacci(count - 1) + recursiveFibonacci(count - 2);
+		}
 
 }
